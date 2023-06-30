@@ -11,13 +11,13 @@ class Register_controller extends CI_Controller
 	}
 
 	public function index(){
-		$this->load->helper('url');
+		// $this->load->helper('url');
 		$this->load->view('registration_view');
 	}
 
 	public function validateForm()
 	{
-
+		$this->load->helper('url');
 		if($this->input->post('register'))
 		{
 		$name=$this->input->post('name');
