@@ -45,7 +45,7 @@ body {
             <h2>Registartion Form</h2>
          </div>
          <?php echo @$message; ?>
-         <form method="post" enctype="multipart/formdata">
+         <form method="post" action="<?php echo site_url('Welcome/validateForm'); ?>">
             <div class="form-group">
                <label for="email">Name:</label>
                <input type="text" class="form-control" name="name" required placeholder="Enter Name"

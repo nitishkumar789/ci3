@@ -5,11 +5,17 @@ class Register_controller extends CI_Controller
 	{
 	parent::__construct();
 	$this->load->database();
-	$this->load->helper('url');
+	// $this->load->library('form_validation');
+	
 	$this->load->model('Register_model'); ///load model
 	}
 
-	public function index()
+	public function index(){
+		$this->load->helper('url');
+		$this->load->view('registration_view');
+	}
+
+	public function validateForm()
 	{
 
 		if($this->input->post('register'))
@@ -21,7 +27,7 @@ class Register_controller extends CI_Controller
 
 		$this->Register_model->insert_data($name,$email,$phone,$password);
 
-	}else{
+	} else{
 	$this->load->view('registration_view');
 	}
 	}
